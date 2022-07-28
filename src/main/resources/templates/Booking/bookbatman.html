@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Booking</title>
+	<link rel="stylesheet" href="/css/bookmoviestyle.css">
+	<!-- Font -->
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700,900" rel="stylesheet">
+
+  <meta charset="UTF-8">
+</head>
+
+<body>
+
+	<div class="container">
+		<div class="container-time" >
+			<img class = "image" src="/images/batman.jpg" alt="">
+		</div>
+
+		<div class="container-form">
+			<form th:action="@{addticket}" th:object="${ticket}" method="post">
+				<h2 class="heading heading-yellow">Book the movie</h2>
+				<label>Seat Number</label>
+				 <select th:field ="*{seat}"  name="seat"class="form-control col-4 mb-4" >
+					 <th:block th:each="seat : ${seatList}">
+						 <option th:text ="${seat.seatNumber}" th:value="${seat.seatId}" /> 
+						 
+					 </th:block> 
+				 
+				 </select>
+			
+				  <label>Details</label>
+				 <select th:field ="*{filmSession}"  name="filmSession"class="form-control col-4 mb-4" >
+					 <th:block th:each="fsession : ${filmSessionList}">
+						 <option th:text ="${fsession.film.title} + ' Date ' 
+						 + ${fsession.startDate} +
+						 ' Time ' 
+						 + ${fsession.startTime}  +
+						 ' Price ' 
+						 + ${fsession.price}  +
+						 ' Venue ' 
+						 + ${fsession.venue.venueLocation}  " th:value="${fsession.filmSessionId}" /> 
+						 
+					 </th:block>
+				 </select>
+				 
+				 <button class="btn btn-primary" type="submit">Book</button>
+				 <div>
+					 <p2>
+					 </p2>
+				 </div>
+			 </form> 
+		</div>
+	</div>
+
+	
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" 
+	lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="Layouts/head :: myHead">
+    
+    <title>Y-CINEMA: Films</title>
+
+</head>
+<body>
+<div th:replace="Layouts/sideBar :: mySideBar"></div>
+<div th:replace = "Layouts/topNav:: TopNav"></div>
+<div class="home-content">
+<div class="container" >
+    <div class="bottom-left">
+ 		<div class = "row">
+		<div class = "col-lg-3">
+			<a th:href = "@{showfilms}" class = "btn btn-primary btn-sm mb-3"> Add a Film</a>
+		</div>	
+		</div>
+		<table class = "table table table-striped table-bordered"> 
+			<thead class = "table-dark">
+				<tr>
+       				 <td>Film Id</td>
+            		  <td>Film description</td>
+            		  <td>Film duration</td>
+            		  <td>Film Title</td>
+            		 
+            		  <td>Year of Release</td>
+            		  <td>Edit</td>
+            		    <td>Delete</td>
+       			  </tr>
+			</thead>
+			
+			<tbody>
+					<tr th:each="films: ${film}">
+        			<td th:text = "${films.filmId}">Film Id</td>
+           			 <td th:text="${films.description}">Film description</td>
+              		<td th:text="${films.duration} + ' min'">First duration</td>
+            		<td th:text="${films.title}">Title</td>
+            		
+            		<td th:text="${films.releaseDate}">Year</td>
+            		
+            		<td >
+           			 	<a class="btn btn-primary" 
+            				th:href= "@{editFilm/{id}(id=${films.filmId})}"
+            				role="Edit">Edit</a>
+           			 </td> 
+             
+            <td><a th:href =  "@{films/{filmId} (filmId=${films.filmId})}" class="btn btn-danger" role="Delete">Delete</a></td>
+        </tr>
+			</tbody>
+			
+		 </table>
+		</div>
+</div>
+</div>
+
+</body>
+</html> 

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Y-CINEMA</title>
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/media_query.css">
+  <link href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900" rel="stylesheet" />
+</head>
+
+<body>
+
+  <div class="container">
+    <header class="">
+      <div class="navbar">
+        <button class="navbar-menu-btn">
+          <span class="one"></span>
+          <span class="two"></span>
+          <span class="three"></span>
+        </button>
+
+
+        <a href="#" class="navbar-brand">
+          <img src="images/ycinemalogo2.png" alt="">
+        </a>
+        <nav class="">
+          <ul class="navbar-nav">
+            <li> <a href="#" class="navbar-link">Home</a> </li>
+            <li> <a th:href="@{booking/book}" class="navbar-link">Booking</a> </li>
+          </ul>
+        </nav>
+
+        <div class="navbar-actions">
+          <form action="#" class="navbar-form">
+            <button class="navbar-form-close">
+              <ion-icon name="close-circle-outline"></ion-icon>
+            </button>
+          </form>
+
+
+          <button class="navbar-search-btn">
+            <ion-icon name="search-outline"></ion-icon>
+          </button>
+          <div class="profile-details">
+            <span sec:authentication="name"></span>
+            <form class="form-inline my-2 my-lg-0" form-method="post" th:action="@{logout}">
+              <button sec:authorize="isAuthenticated()" class="btn btn-outline-danger my-2 my-sm-0 btn-sm" type="submit">Logout</button>
+              <button sec:authorize="isAnonymous()" th:href="@{~/login}" class="btn btn-outline-info my-2 my-sm-0 btn-sm" type="submit">Login</button>
+            </form>
+          </div>
+        </div>
+    </header>
+
+    <main>
+      <section class="banner">
+        <div class="banner-card">
+          <img src="images/jjk.jpg" class="banner-img" alt="">
+          <div class="card-content">
+            <div class="card-info">
+              <div class="genre">
+                <ion-icon name="film"></ion-icon>
+                <span>Action/Thriller</span>
+              </div>
+              <div class="year">
+                <ion-icon name="calendar"></ion-icon>
+                <span>2022</span>
+              </div>
+              <div class="duration">
+                <ion-icon name="time"></ion-icon>
+                <span>1h 30m</span>
+              </div>
+              <div class="quality">4K</div>
+            </div>
+            <h2 class="card-title">Jujutsu Kaisen: The Movie</h2>
+          </div>
+        </div>
+      </section>
+
+      <section class="movies">
+        <div class="movies-grid">
+          <div class="movie-card">
+            <div class="card-head">
+              <img src="images/movies/batman.png" alt="" class="card-img">
+              <div class="card-overlay">
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>8.4</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-body">
+              <h3><a th:href="@{booking/book}" class="card-title">The Batman</a></h3>
+              <div class="card-info">
+                <span class="genre">Action/Mystery</span>
+                <span class="year">2022</span>
+              </div>
+            </div>
+
+          </div>
+          <div class="movie-card">
+            <div class="card-head">
+              <img src="images/movies/john-wick-movie.jpg" alt="" class="card-img">
+              <div class="card-overlay">
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>8.1</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-body">
+              <h3 class="card-title">John Wick 3</h3>
+              <div class="card-info">
+                <span class="genre">Action</span>
+                <span class="year">2022</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="movie-card">
+            <div class="card-head">
+              <img src="images/movies/sword-of-the-stranger.jpg" alt="" class="card-img">
+              <div class="card-overlay">
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>8.3</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-body">
+              <h3 class="card-title">Sword of The Stranger</h3>
+              <div class="card-info">
+                <span class="genre">Action</span>
+                <span class="year">2022</span>
+              </div>
+            </div>
+
+          </div>
+          <div class="movie-card">
+            <div class="card-head">
+              <img src="images/movies/jojo-train battle.jpg" alt="" class="card-img">
+              <div class="card-overlay">
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>8.6</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Jojo's Bizzare Adventure</h3>
+              <div class="card-info">
+                <span class="genre">Adventure/Action/Thriler</span>
+                <span class="year">2022</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="movie-card">
+            <div class="card-head">
+              <img src="images/movies/gintama.jpg" alt="" class="card-img">
+              <div class="card-overlay">
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>9.1</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Gintama</h3>
+              <div class="card-info">
+                <span class="genre">Action/Adventure</span>
+                <span class="year">2022</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="movie-card">
+            <div class="card-head">
+              <img src="images/movies/demon-slayer.jpg" alt="" class="card-img">
+              <div class="card-overlay">
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>8.86</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Demon Slayer: Mugen Train</h3>
+              <div class="card-info">
+                <span class="genre">Action</span>
+                <span class="year">2022</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="movie-card">
+            <div class="card-head">
+              <img src="images/movies/mob-psycho.jpg" alt="" class="card-img">
+              <div class="card-overlay">
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>8.9</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Mob Psycho 100</h3>
+              <div class="card-info">
+                <span class="genre">Action/Fantasy</span>
+                <span class="year">2022</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        </section>
+        </main>
+
+  </div>
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <img src="images/ycinemalogo2.png" alt="" class="footer-logo">
+        <div class="social-link">
+          <a href="#">
+            <ion-icon name="logo-facebook"></ion-icon>
+          </a>
+          <a href="#">
+            <ion-icon name="logo-twitter"></ion-icon>
+          </a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <ul>
+          <h4 class="link-heading">Y-CINEMA</h4>
+          <li class="link-item"><a href="#">About us</a></li>
+          <li class="link-item"><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="copyright">
+        <p>&copy; copyright 2022 Y-CINEMA</p>
+      </div>
+      <div class="wrapper">
+        <a href="#">Privacy policy</a>
+        <a href="#">Terms and conditions</a>
+      </div>
+    </div>
+  </footer>
+  
+
+  <script src="./assets/js/main.js"></script>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

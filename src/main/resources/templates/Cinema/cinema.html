@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" 
+	lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="Layouts/head :: myHead">
+    
+    <title>Y-CINEMA: Cinema</title>
+
+</head>
+<body>
+<div th:replace="Layouts/sideBar :: mySideBar"></div>
+<div th:replace = "Layouts/topNav:: TopNav"></div>
+<div class="home-content">
+<div class="container">
+    <div class="bottom-left">
+ 		<div class = "row">
+		<div class = "col-lg-3">
+			<a th:href = "@{showcinemas}" class = "btn btn-primary btn-sm mb-3"> Add a Cinema</a>
+		</div>
+		
+		</div>
+		<table class = "table table table-striped table-bordered"> 
+			<thead class = "table-dark">
+				<tr>
+       				 <td>Cinema Id</td>
+            		  <td>Cinema Name</td>
+            		  <td>Cinema Address</td>
+              		  <td>Cinema Phone No.</td>
+            		  <td>Cinema Email</td>
+            		  <td>Edit</td>
+            		  <td>Delete</td>
+       			  </tr>
+			</thead>
+			
+			<tbody>
+					<tr th:each="cinemas: ${cinema}">
+        			<td th:text = "${cinemas.cinemaId}">Ticket Id</td>
+           			 <td th:text="${cinemas.cinemaName}">Ticket Seat</td>
+              		<td th:text="${cinemas.address}">Ticket Film Session</td>
+            		<td th:text="${cinemas.phone}">Ticket User</td>
+            		<td th:text="${cinemas.email}">Ticket User</td>
+            		<td >
+           			 	<a class="btn btn-primary" 
+            				th:href= "@{editCinema/{id}(id=${cinemas.cinemaId})}"
+            				role="Edit">Edit</a>
+           			 </td> 
+            
+       
+            <td><a th:href =  "@{cinemas/{cinemaId} (cinemaId=${cinemas.cinemaId})}" class="btn btn-danger" role="Delete">Delete</a></td>
+        </tr>
+			</tbody>
+			
+			
+		 </table>
+		</div>
+</div>
+</div>
+</body>
+</html> 

@@ -1,0 +1,72 @@
+ <html xmlns:th="http://www.thymeleaf.org" 
+	lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+ 
+ <div class="sidebar" th:fragment="mySideBar">
+    <div class="logo-details">
+      <span class="logo_name">Y-CINEMA</span>
+    </div>
+      <ul class="nav-links">
+        <li>
+          <a sec:authorize="hasAuthority('ADMIN')"  href="#" class="active">
+            <span class="links_name">Dashboard</span>
+          </a>
+        </li>
+        <li>
+    <!--  th:href="@{~/staff/staffList}" -->
+          <a sec:authorize="hasAuthority('ADMIN')" th:href="@{~/cinema/cinemas}">
+            <span class="links_name">Cinema</span>
+          </a>
+        </li>
+        <li>
+          <a sec:authorize="hasAnyAuthority('ADMIN', 'USER')" th:href="@{~/user/users}">
+            <span class="links_name">Users</span>
+          </a>
+        </li>
+        <li>
+          <a sec:authorize="hasAuthority('ADMIN')" th:href="@{~/film/films}">
+            <span class="links_name">Films</span>
+          </a>
+        </li>
+        <li>
+          <a sec:authorize="hasAuthority('ADMIN')" th:href="@{~/session/filmsession}">
+            <span class="links_name">FilmSession</span>
+          </a>
+        </li>
+        <li>
+          <a sec:authorize="hasAuthority('ADMIN')" th:href="@{~/ticket/list}">
+            <span class="links_name">Tickets</span>
+          </a>
+        </li>
+        <li>
+          <a sec:authorize="hasAuthority('ADMIN')" th:href="@{~/seat/listseats}">
+            <span class="links_name">Seats</span>
+          </a>
+        </li>
+        <li>
+          <a sec:authorize="hasAuthority('ADMIN')" th:href="@{~/venue/list}">
+            <span class="links_name">Venue</span>
+          </a>
+        </li>
+        <li>
+            <a sec:authorize="hasAuthority('ADMIN')" th:href="@{~/row/venueRows}">
+              <span class="links_name">Venue-Rows</span>
+            </a>
+          </li>
+          
+          <sec:authentication-manager>
+          	<sec:authentication-provider user-service-fer="" />
+          	
+          </sec:authentication-manager>
+        <li class="log_out">
+          <form class="form-inline my-2 my-lg-0" form-method="post" th:action="@{/logout}">
+               					 <button sec:authorize="isAuthenticated()" class="btn btn-outline-danger my-2 my-sm-0 btn-sm" type="submit">Logout</button>
+               					 <button sec:authorize="isAnonymous()" th:href="@{~/login}" class="btn btn-outline-info my-2 my-sm-0 btn-sm" type="submit">Login</button>
+           						 </form>>
+            <span class="links_name">Log out</span>
+          
+        </li>
+      </ul>
+  </div>
+  
+  
