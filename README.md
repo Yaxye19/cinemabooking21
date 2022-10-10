@@ -41,7 +41,7 @@ so on. The database used for this application is PostgreSQL
 ![image](https://user-images.githubusercontent.com/78431953/194967526-2d3c2b1a-6dc2-4325-b072-8698708e5f5d.png)
 
 ### Admin dashboard
-![image](https://user-images.githubusercontent.com/78431953/194967805-adf5c5a2-cfc1-4b8e-b1ac-ce0be716308a.png)
+![image](https://user-images.githubusercontent.com/78431953/194967851-e57dbd7c-0580-4da6-a764-a2fcbeb610b6.png)
 
 
 
