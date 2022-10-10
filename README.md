@@ -21,3 +21,6 @@ so on. The database used for this application is PostgreSQL
 - To make an admin account, the set the roles within the database 1 is ADMIN and 2 is USER.
 
 - When the admin user is created, to access the dashboard type http://localhost:8091/film/films in the URL.
+
+![image](https://user-images.githubusercontent.com/78431953/194967199-d56a65b1-41b4-47b5-a279-e9656550cc9d.png)
+
