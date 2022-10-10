@@ -33,8 +33,14 @@ so on. The database used for this application is PostgreSQL
 ![image](https://user-images.githubusercontent.com/78431953/194967385-b2b89198-6753-4212-bdef-133c8e6422dc.png)
 
 
+### Register as new user page 
+![image](https://user-images.githubusercontent.com/78431953/194967640-eb2eaa23-0fe6-41e1-9c74-4a5d9b38154a.png)
+
+
 ### Booking the film page
 ![image](https://user-images.githubusercontent.com/78431953/194967526-2d3c2b1a-6dc2-4325-b072-8698708e5f5d.png)
+
+
 
 
 
