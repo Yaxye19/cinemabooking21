@@ -25,6 +25,11 @@ so on. The database used for this application is PostgreSQL
 
 ## The website
 
-### The Landing page   
+### The home page   
 ![image](https://user-images.githubusercontent.com/78431953/194967199-d56a65b1-41b4-47b5-a279-e9656550cc9d.png)
+
+
+### The login page
+![image](https://user-images.githubusercontent.com/78431953/194967385-b2b89198-6753-4212-bdef-133c8e6422dc.png)
+
 
