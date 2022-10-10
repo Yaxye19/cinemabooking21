@@ -43,6 +43,10 @@ so on. The database used for this application is PostgreSQL
 ### Admin dashboard
 ![image](https://user-images.githubusercontent.com/78431953/194967851-e57dbd7c-0580-4da6-a764-a2fcbeb610b6.png)
 
+### Admin can edit information
+![image](https://user-images.githubusercontent.com/78431953/194967939-a613d3fa-8e52-4aab-a7aa-ae44f7ec575a.png)
+
+
 
 
 
