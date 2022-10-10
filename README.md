@@ -40,6 +40,10 @@ so on. The database used for this application is PostgreSQL
 ### Booking the film page
 ![image](https://user-images.githubusercontent.com/78431953/194967526-2d3c2b1a-6dc2-4325-b072-8698708e5f5d.png)
 
+### Admin dashboard
+![image](https://user-images.githubusercontent.com/78431953/194967805-adf5c5a2-cfc1-4b8e-b1ac-ce0be716308a.png)
+
+
 
 
 
